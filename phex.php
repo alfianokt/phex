@@ -76,7 +76,6 @@ while(1){
 		$contents = file_get_contents('trap.html');
 		$body = str_replace("*", $contents, $json->body);
 		if($json->status != 0 && $json->body != null){
-			echo $json->body;
 			echo "\033[92;1msucces\033[97;1m\n";
 			for($i=0;$i<$c;$i++){bom($json->host, $json->action, $body);}
 		}else{ echo "\033[91;1mfailed\033[97;1m\n";}
